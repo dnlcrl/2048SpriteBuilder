@@ -50,5 +50,9 @@
     }
 }
 
+- (void)newGame {
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:mainScene];
+}
 
 @end

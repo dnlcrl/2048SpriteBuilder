@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		102FD12719010E800034CB5D /* GameEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 102FD12619010E800034CB5D /* GameEnd.m */; };
+		102FD12E190145590034CB5D /* ScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 102FD12D190145590034CB5D /* ScoreBoard.m */; };
 		10A003F91900242100C24F77 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A003F81900242100C24F77 /* Grid.m */; };
 		10A003FD1900248600C24F77 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A003FC1900248600C24F77 /* Tile.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		102FD12519010E800034CB5D /* GameEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEnd.h; path = Source/GameEnd.h; sourceTree = "<group>"; };
 		102FD12619010E800034CB5D /* GameEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameEnd.m; path = Source/GameEnd.m; sourceTree = "<group>"; };
+		102FD12C190145590034CB5D /* ScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreBoard.h; path = Source/ScoreBoard.h; sourceTree = "<group>"; };
+		102FD12D190145590034CB5D /* ScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreBoard.m; path = Source/ScoreBoard.m; sourceTree = "<group>"; };
 		10A003F71900242100C24F77 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grid.h; path = Source/Grid.h; sourceTree = "<group>"; };
 		10A003F81900242100C24F77 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Grid.m; path = Source/Grid.m; sourceTree = "<group>"; };
 		10A003FB1900248600C24F77 /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tile.h; path = Source/Tile.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				10A003FC1900248600C24F77 /* Tile.m */,
 				102FD12519010E800034CB5D /* GameEnd.h */,
 				102FD12619010E800034CB5D /* GameEnd.m */,
+				102FD12C190145590034CB5D /* ScoreBoard.h */,
+				102FD12D190145590034CB5D /* ScoreBoard.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				10A003F91900242100C24F77 /* Grid.m in Sources */,
+				102FD12E190145590034CB5D /* ScoreBoard.m in Sources */,
 				102FD12719010E800034CB5D /* GameEnd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
