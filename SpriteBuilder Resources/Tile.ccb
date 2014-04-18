@@ -107,7 +107,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>Helvetica-Bold</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -116,7 +116,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>42</real>
+									<real>37</real>
 									<integer>0</integer>
 								</array>
 							</dict>

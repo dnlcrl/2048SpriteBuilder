@@ -42,7 +42,7 @@ static const NSInteger WIN_TILE = 2048;
 		x = _tileMarginHorizontal;
 		for (int j = 0; j < GRID_SIZE; j++) {
 			//  iterate through each column in the current row
-			CCNodeColor *backgroundTile = [CCNodeColor nodeWithColor:[CCColor grayColor]];
+			CCNodeColor *backgroundTile = [CCNodeColor nodeWithColor:[CCColor colorWithRed:204.f/255.f green:192.f/255.f blue:179.f/255.f]];
 			backgroundTile.contentSize = CGSizeMake(_columnWidth, _columnHeight);
 			backgroundTile.position = ccp(x, y);
 			[self addChild:backgroundTile];
