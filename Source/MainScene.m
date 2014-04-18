@@ -22,7 +22,7 @@
 - (void)didLoadFromCCB {
     CCLOG(@"%d", _grid.score);
     [_grid addObserver:self forKeyPath:@"score" options:0 context:NULL];
-    [[NSUserDefaults standardUserDefaults] addObserver:self
+    [_grid addObserver:self
                                             forKeyPath:@"highscore"
                                                options:0
                                                context:NULL];
@@ -38,7 +38,7 @@
     if ([keyPath isEqualToString:@"score"]) {
         _scoreLabel.string = [NSString stringWithFormat:@"%d", _grid.score];
     } else if ([keyPath isEqualToString:@"highscore"]) {
-        [self updateHighscore];
+        _highscoreLabel.string = [NSString stringWithFormat:@"%d", _grid.highscore.intValue];
     }
 }
 

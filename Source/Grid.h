@@ -10,4 +10,5 @@
 
 @interface Grid : CCNodeColor
 @property (nonatomic, assign) NSInteger score;
+@property (nonatomic, assign) NSNumber* highscore;
 @end

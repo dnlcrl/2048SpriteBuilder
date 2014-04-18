@@ -17,10 +17,11 @@
 	CGFloat _tileMarginHorizontal;
     NSMutableArray *_gridArray;
 	NSNull *_noTile;
+    NSNumber *__highscore;
 }
 static const NSInteger GRID_SIZE = 4;
 static const NSInteger START_TILES = 2;
-static const NSInteger WIN_TILE = 8;
+static const NSInteger WIN_TILE = 2048;
 
 
 - (void)setupBackground
@@ -51,6 +52,8 @@ static const NSInteger WIN_TILE = 8;
 }
 
 - (void)didLoadFromCCB {
+    self.highscore = [[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+    __highscore = self.highscore;
 	[self setupBackground];
 	_noTile = [NSNull null];
 	_gridArray = [NSMutableArray array];
@@ -255,6 +258,7 @@ static const NSInteger WIN_TILE = 8;
     Tile *mergedTile = _gridArray[x][y];
     Tile *otherTile = _gridArray[xOtherTile][yOtherTile];
     self.score += mergedTile.value + otherTile.value;
+    [self checkNewHighscore];
     otherTile.value *= 2;
     otherTile.mergedThisRound = TRUE;
     if (otherTile.value == WIN_TILE) {
@@ -335,15 +339,20 @@ static const NSInteger WIN_TILE = 8;
     [self endGameWithMessage:@"You lose!"];
 }
 
+- (void)checkNewHighscore {
+    if (self.score > __highscore.intValue) {
+        // new highscore!
+        self.highscore = [NSNumber numberWithInt:self.score];
+        [[NSUserDefaults standardUserDefaults] setObject:self.highscore forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        __highscore = self.highscore;
+    }
+}
+
 - (void)endGameWithMessage:(NSString*)message {
     CCLOG(@"%@",message);
-    NSNumber *highScore = [[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
-    if (self.score > [highScore intValue]) {
-        // new highscore!
-        highScore = [NSNumber numberWithInt:self.score];
-        [[NSUserDefaults standardUserDefaults] setObject:highScore forKey:@"highscore"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+    
+
     GameEnd *gameEndPopover = (GameEnd *)[CCBReader load:@"GameEnd"];
     gameEndPopover.positionType = CCPositionTypeNormalized;
     gameEndPopover.position = ccp(0.5, 0.5);
